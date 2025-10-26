@@ -8,6 +8,7 @@
 
 #define NR_PAGEFLAGS 21 /* __NR_PAGEFLAGS */
 #define MAX_NR_ZONES 4 /* __MAX_NR_ZONES */
-#define SPINLOCK_SIZE 0 /* sizeof(spinlock_t) */
+#define NR_CPUS_BITS 1 /* ilog2(CONFIG_NR_CPUS) */
+#define SPINLOCK_SIZE 4 /* sizeof(spinlock_t) */
 
 #endif

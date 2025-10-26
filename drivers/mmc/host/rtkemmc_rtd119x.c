@@ -4756,7 +4756,7 @@ emmc_id_dev_show(struct device *dev, struct device_attribute *attr,
     struct mmc_card *card = host->card;
     struct rtksd_host *sdport = mmc_priv(host);
 
-    printk(KERN_INFO "%s(%u)%s %s\n",__func__,__LINE__,__DATE__, __TIME__);
+    printk(KERN_INFO "%s(%u)\n",__func__,__LINE__);
     return sprintf(buf, "emmcid=0x%02x%02x\ncfg1=0x%02x,cfg2=0x%02x,cfg3=0x%02x,sts1=0x%02x,sts2=0x%02x,bus_sts=0x%02x\nsample_pnt=0x%02x,push_pnt=0x%02x,trans=0x%02x,pad_ctl=0x%02x,ckgen_ctl=0x%02x\nCARD_SELECT=0x%02x,SYS_PLL_EMMC3=0x%08x,PLL_EMMC1=0x%08x\n",
                     (unsigned char)(card->cid.manfid),
                     (unsigned char)(card->cid.oemid),cr_readb(sdport->base_io+SD_CONFIGURE1),cr_readb(sdport->base_io+SD_CONFIGURE2),cr_readb(sdport->base_io+SD_CONFIGURE3),cr_readb(sdport->base_io+SD_STATUS1),cr_readb(sdport->base_io+SD_STATUS2),cr_readb(sdport->base_io+SD_BUS_STATUS),cr_readb(sdport->base_io+SD_TRANSFER),cr_readb(sdport->base_io+SD_SAMPLE_POINT_CTL),cr_readb(sdport->base_io+SD_PUSH_POINT_CTL),cr_readl(sdport->base_io+EMMC_PAD_CTL),cr_readl(sdport->base_io+EMMC_CKGEN_CTL),cr_readb(sdport->base_io+CARD_SELECT),cr_readl(SYS_PLL_EMMC3),cr_readl(PLL_EMMC1));
@@ -5248,7 +5248,6 @@ static void rtkcr_display_version (void)
     date = strsep(&running, " ");
     time = strsep(&running, " ");
     printk(BANNER " Rev:%s (%s %s)\n", revision, date, time);
-    printk("%s: build at %s %s\n",DRIVER_NAME, __DATE__, __TIME__);
 
 #ifdef CONFIG_MMC_BLOCK_BOUNCE
     printk("%s: CONFIG_MMC_BLOCK_BOUNCE enable\n",DRIVER_NAME);

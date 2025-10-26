@@ -1,6 +1,7 @@
-/* This file is auto generated, version 44 */
+/* This file is auto generated, version 9 */
+/* SMP PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#44 Mon Apr 7 22:06:34 CEST 2025"
+#define UTS_VERSION "#9 SMP PREEMPT Sun Oct 26 08:48:03 CET 2025"
 #define LINUX_COMPILE_BY "stephan"
-#define LINUX_COMPILE_HOST "stephan-ms7c94"
-#define LINUX_COMPILER "gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) "
+#define LINUX_COMPILE_HOST "fedora.fritz.box"
+#define LINUX_COMPILER "gcc version 4.9.4 (Linaro GCC 4.9-2017.01) "
